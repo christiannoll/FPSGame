@@ -89,3 +89,4 @@ func toggle_crouch():
 		print("UNCROUCH")
 	else:
 		print("CROUCH")
+	_is_crouching = !_is_crouching
