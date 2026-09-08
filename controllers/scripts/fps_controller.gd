@@ -14,6 +14,8 @@ var _mouse_rotation : Vector3
 var _player_rotation : Vector3
 var _camera_rotation : Vector3
 
+var _is_crouching: bool = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -28,6 +30,8 @@ func _input(event):
 	
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
+	if event.is_action_pressed("crouch"):
+		toggle_crouch()
 		
 func _update_camera(delta):
 	
@@ -79,3 +83,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+func toggle_crouch():
+	if _is_crouching == true:
+		print("UNCROUCH")
+	else:
+		print("CROUCH")
