@@ -8,6 +8,14 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6tv51"]
 material = ExtResource("2_gldw4")
 
+[sub_resource type="Animation" id="Animation_ca8e7"]
+resource_name = "Crouch"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xc2pf"]
+_data = {
+&"Crouch": SubResource("Animation_ca8e7")
+}
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=540083545 node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_pgc1p")
 MOUSE_SENSITIVITY = 0.25
@@ -30,3 +38,4 @@ update_mode = 1
 enable_shadows = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1838903054]
+libraries/ = SubResource("AnimationLibrary_xc2pf")
