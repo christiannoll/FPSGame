@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
 @export var CAMERA_CONTROLLER : Camera3D
+@export var ANIMATIONPLAYER: AnimationPlayer
 
 var _mouse_input : bool = false
 var _rotation_input : float
@@ -88,5 +89,5 @@ func toggle_crouch():
 	if _is_crouching == true:
 		print("UNCROUCH")
 	else:
-		print("CROUCH")
+		ANIMATIONPLAYER.play("Crouch")
 	_is_crouching = !_is_crouching
