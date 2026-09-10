@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var SPEED : float = 5.0
 @export var JUMP_VELOCITY : float = 4.5
+@export_range(5, 10, 0.1) var CROUCH_SPEED: float = 7.0
 @export var MOUSE_SENSITIVITY : float = 0.5
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
@@ -87,7 +88,7 @@ func _physics_process(delta):
 	
 func toggle_crouch():
 	if _is_crouching == true:
-		print("UNCROUCH")
+		ANIMATIONPLAYER.play("Crouch", -1, -CROUCH_SPEED, true)
 	else:
-		ANIMATIONPLAYER.play("Crouch")
+		ANIMATIONPLAYER.play("Crouch", -1, CROUCH_SPEED)
 	_is_crouching = !_is_crouching
