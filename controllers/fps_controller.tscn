@@ -94,11 +94,12 @@ _data = {
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ryf0"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=540083545 node_paths=PackedStringArray("CAMERA_CONTROLLER", "ANIMATIONPLAYER")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=540083545 node_paths=PackedStringArray("CAMERA_CONTROLLER", "ANIMATIONPLAYER", "CROUCH_SHAPECAST")]
 script = ExtResource("1_pgc1p")
 MOUSE_SENSITIVITY = 0.25
 CAMERA_CONTROLLER = NodePath("CameraController/Camera3D")
 ANIMATIONPLAYER = NodePath("AnimationPlayer")
+CROUCH_SHAPECAST = NodePath("ShapeCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=267049106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -123,3 +124,4 @@ libraries/ = SubResource("AnimationLibrary_xc2pf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("SphereShape3D_3ryf0")
 target_position = Vector3(0, 0.5, 0)
+debug_shape_custom_color = Color(0, 0.84705883, 0, 1)
