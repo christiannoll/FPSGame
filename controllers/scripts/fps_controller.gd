@@ -58,6 +58,8 @@ func _ready():
 
 	# Get mouse input
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	CROUCH_SHAPECAST.add_exception($".")
 
 func _physics_process(delta):
 	
@@ -88,7 +90,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func toggle_crouch():
-	if _is_crouching == true:
+	if _is_crouching == true and CROUCH_SHAPECAST.is_colliding() == false:
 		ANIMATIONPLAYER.play("Crouch", -1, -CROUCH_SPEED, true)
 	else:
 		ANIMATIONPLAYER.play("Crouch", -1, CROUCH_SPEED)
