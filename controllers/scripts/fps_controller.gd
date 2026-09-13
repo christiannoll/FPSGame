@@ -94,4 +94,7 @@ func toggle_crouch():
 		ANIMATIONPLAYER.play("Crouch", -1, -CROUCH_SPEED, true)
 	else:
 		ANIMATIONPLAYER.play("Crouch", -1, CROUCH_SPEED)
-	_is_crouching = !_is_crouching
+
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	if anim_name == "Crouch":
+		_is_crouching = !_is_crouching
