@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var SPEED : float = 5.0
+@export var TOGGLE_CROUCH: bool = true
 @export var JUMP_VELOCITY : float = 4.5
 @export_range(5, 10, 0.1) var CROUCH_SPEED: float = 7.0
 @export var MOUSE_SENSITIVITY : float = 0.5
