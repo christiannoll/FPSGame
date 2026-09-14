@@ -36,6 +36,10 @@ func _input(event):
 		get_tree().quit()
 	if event.is_action_pressed("crouch") and is_on_floor():
 		toggle_crouch()
+	if event.is_action_pressed("crouch") and is_on_floor() and _is_crouching == false and TOGGLE_CROUCH == false: #Hold to crouch
+		crouching(true)
+	if event.is_action_released("crouch") and TOGGLE_CROUCH == false: #Released to Uncrouch
+		crouching(false)
 		
 func _update_camera(delta):
 	
@@ -92,9 +96,18 @@ func _physics_process(delta):
 	
 func toggle_crouch():
 	if _is_crouching == true and CROUCH_SHAPECAST.is_colliding() == false:
-		ANIMATIONPLAYER.play("Crouch", -1, -CROUCH_SPEED, true)
+		crouching(false)
 	else:
-		ANIMATIONPLAYER.play("Crouch", -1, CROUCH_SPEED)
+		crouching(true)
+
+func crouching(state: bool):
+	match state:
+		true: 
+			ANIMATIONPLAYER.play("Crouch", 0, CROUCH_SPEED)
+		false:
+			ANIMATIONPLAYER.play("Crouch", 0, -CROUCH_SPEED, true)
+			
+
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "Crouch":
