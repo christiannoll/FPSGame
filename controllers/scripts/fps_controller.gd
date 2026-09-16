@@ -39,7 +39,10 @@ func _input(event):
 	if event.is_action_pressed("crouch") and is_on_floor() and _is_crouching == false and TOGGLE_CROUCH == false: #Hold to crouch
 		crouching(true)
 	if event.is_action_released("crouch") and TOGGLE_CROUCH == false: #Released to Uncrouch
-		crouching(false)
+		if CROUCH_SHAPECAST.is_colliding() == false:
+			crouching(false)
+		else:
+			uncrouch_check()
 		
 func _update_camera(delta):
 	
@@ -99,6 +102,13 @@ func toggle_crouch():
 		crouching(false)
 	else:
 		crouching(true)
+		
+func uncrouch_check():
+	if CROUCH_SHAPECAST.is_colliding() == false:
+		crouching(false)
+	else:
+		await get_tree().create_timer(0.1).timeout
+		uncrouch_check()
 
 func crouching(state: bool):
 	match state:
