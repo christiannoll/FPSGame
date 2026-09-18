@@ -135,4 +135,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="CenterContainer" type="CenterContainer" parent="UserInterface" unique_id=87124350]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
