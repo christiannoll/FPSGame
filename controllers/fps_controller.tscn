@@ -128,8 +128,11 @@ debug_shape_custom_color = Color(0, 0.84705883, 0, 1)
 
 [node name="UserInterface" type="Control" parent="." unique_id=279800286]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 160.0
-offset_bottom = 101.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
