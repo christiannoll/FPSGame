@@ -152,11 +152,19 @@ grow_vertical = 2
 script = ExtResource("3_xc2pf")
 
 [node name="Top" type="Line2D" parent="UserInterface/Reticle" unique_id=383215040]
+points = PackedVector2Array(0, -5, 0, -15)
+width = 2.0
 
 [node name="Right" type="Line2D" parent="UserInterface/Reticle" unique_id=2093697209]
+points = PackedVector2Array(5, 0, 15, 0)
+width = 2.0
 
 [node name="Bottom" type="Line2D" parent="UserInterface/Reticle" unique_id=433309638]
+points = PackedVector2Array(0, 5, 0, 15)
+width = 2.0
 
 [node name="Left" type="Line2D" parent="UserInterface/Reticle" unique_id=604127212]
+points = PackedVector2Array(-5, 0, -15, 0)
+width = 2.0
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
