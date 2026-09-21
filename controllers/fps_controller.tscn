@@ -151,4 +151,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_xc2pf")
 
+[node name="Top" type="Line2D" parent="UserInterface/Reticle" unique_id=383215040]
+
+[node name="Right" type="Line2D" parent="UserInterface/Reticle" unique_id=2093697209]
+
+[node name="Bottom" type="Line2D" parent="UserInterface/Reticle" unique_id=433309638]
+
+[node name="Left" type="Line2D" parent="UserInterface/Reticle" unique_id=604127212]
+
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
