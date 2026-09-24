@@ -95,6 +95,8 @@ _data = {
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ryf0"]
 
+[sub_resource type="Theme" id="Theme_xc2pf"]
+
 [node name="FPSController" type="CharacterBody3D" unique_id=540083545 node_paths=PackedStringArray("CAMERA_CONTROLLER", "ANIMATIONPLAYER", "CROUCH_SHAPECAST")]
 script = ExtResource("1_pgc1p")
 MOUSE_SENSITIVITY = 0.25
@@ -176,6 +178,7 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 210.0
 offset_bottom = 50.0
+theme = SubResource("Theme_xc2pf")
 
 [node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel" unique_id=2108490951]
 layout_mode = 2
