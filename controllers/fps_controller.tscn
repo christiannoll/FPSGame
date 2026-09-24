@@ -169,4 +169,12 @@ width = 2.0
 points = PackedVector2Array(-5, 0, -15, 0)
 width = 2.0
 
+[node name="DebugPanel" type="PanelContainer" parent="UserInterface" unique_id=1489534110]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 50.0
+
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
