@@ -1,7 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://bvgrbw3o8xhf7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6fw5"]
+
 [resource]
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_t6fw5")
