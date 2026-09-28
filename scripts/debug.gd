@@ -9,7 +9,13 @@ var frames_per_second: String
 func _ready() -> void:
 	#Hide debug panel on load
 	visible = false
-	add_debug_property("test", "test")
+	add_debug_property("FPS", frames_per_second)
+	
+func _process(delta: float) -> void:
+	if visible:
+		frames_per_second = "%.2f" % (1.0/delta) # Gets frames per second every frame
+		# frames_per_second = Engine.get_frames_per_second() # Gets frames per second every second frame
+		property.text = property.name + ": " + frames_per_second
 	
 func _input(event):
 	#Toggle debug panel
