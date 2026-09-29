@@ -7,7 +7,9 @@ var frames_per_second: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Hide debug panel on load
+	# Set global reference to self in Global Singleton
+	Global.debug = self
+	# Hide debug panel on load
 	visible = false
 	add_debug_property("FPS", frames_per_second)
 	
