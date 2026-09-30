@@ -74,8 +74,10 @@ func _ready():
 	CROUCH_SHAPECAST.add_exception($".")
 
 func _physics_process(delta):
+	var frames_per_second = "%.2f" % (1.0/delta)
 	Global.debug.add_property("Movement Speed", _speed, 1)
 	Global.debug.add_property("MouseRotation", _mouse_rotation, 2)
+	Global.debug.add_property("FPS", frames_per_second, 3)
 	
 	# Update camera movement based on mouse movement
 	_update_camera(delta)
