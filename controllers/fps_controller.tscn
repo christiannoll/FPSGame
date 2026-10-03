@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ur71t1hpx6g3" path="res://scripts/reticle.gd" id="3_xc2pf"]
 [ext_resource type="Theme" uid="uid://bvgrbw3o8xhf7" path="res://ui/themes/debug.tres" id="4_t6fw5"]
 [ext_resource type="Script" uid="uid://c3qnwcy6h4cd1" path="res://scripts/debug.gd" id="5_y677r"]
+[ext_resource type="Script" uid="uid://ua2sjsfuwe4s" path="res://scripts/state_machine.gd" id="6_co0pi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6tj1"]
 
@@ -186,5 +187,9 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer" unique_id=540692266]
 layout_mode = 2
+
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=1897844750]
+script = ExtResource("6_co0pi")
+metadata/_custom_type_script = "uid://ua2sjsfuwe4s"
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
