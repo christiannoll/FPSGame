@@ -92,10 +92,14 @@ tracks/2/keys = {
 "values": [Vector3(0, 1.5, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jmoha"]
+resource_name = "Walking"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xc2pf"]
 _data = {
 &"Crouch": SubResource("Animation_ca8e7"),
-&"RESET": SubResource("Animation_xc2pf")
+&"RESET": SubResource("Animation_xc2pf"),
+&"Walking": SubResource("Animation_jmoha")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3ryf0"]
