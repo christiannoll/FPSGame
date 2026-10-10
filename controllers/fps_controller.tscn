@@ -136,9 +136,9 @@ tracks/0/path = NodePath("CameraController:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.083333336, 0, 0, 0, 0, -0.083333336, 0, 0, 0, 0, -0.08333336, 0, 0, 0, 0, -0.08333331, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5, 1, 1.5000001, 2)
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.014369141, -0.072222225, 0, 0.01111111, 0, -0.0134024, -0.03333333, 0, 0.050000004, 0, 0, -0.083333336, 0, 0, 0, 0.014590428, -0.083333336, 0, 0, 0, 0, -0.08333336, 0, 0, 0, 0, -0.08333331, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.43333334, 0.73333335, 1, 1.2333333, 1.5000001, 2)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -147,9 +147,9 @@ tracks/1/path = NodePath("CameraController:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
-"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0, 1.5, -0.083333336, 0, 0, 0, 1.5, -0.083333336, 0, 0, 0, 1.5, -0.08333336, 0, 0, 0, 1.5, -0.08333331, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5, 1, 1.5000001, 2)
+"handle_modes": PackedInt32Array(0, 2, 0, 2, 0),
+"points": PackedFloat32Array(1.39366, -0.005555556, 0, 0.39074403, 0.022444129, 1.540348, -0.15349908, 0.0016940596, 0.21788943, -0.0024046898, 1.3928584, -0.28916556, 0.021642566, 0.30050397, 0.011222124, 1.5395465, -0.21294881, 0.00072426774, 0.23567522, -0.00080156326, 1.3928584, -0.20169711, 0.01763463, 0.19006968, 0.00080156326),
+"times": PackedFloat32Array(0.033333335, 0.53333336, 1, 1.5333333, 1.9666667)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
