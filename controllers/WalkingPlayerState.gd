@@ -3,6 +3,7 @@ class_name WalkingPlayerState
 extends State
 
 @export var ANIMATION: AnimationPlayer
+@export var TOP_ANIM_SPEED: float = 2.2
 
 func enter() -> void:
 	ANIMATION.play("Walking", -1.0, 1.0)
