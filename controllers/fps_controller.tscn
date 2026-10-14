@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cu7ku22vv0py2" path="res://scripts/state_machine.gd" id="6_co0pi"]
 [ext_resource type="Script" uid="uid://gevj2cs4ycae" path="res://controllers/IdlePlayerState.gd" id="7_gshig"]
 [ext_resource type="Script" uid="uid://rft82vwu4lgp" path="res://controllers/WalkingPlayerState.gd" id="8_jmoha"]
+[ext_resource type="Script" uid="uid://c8nsox3vl6eek" path="res://controllers/SprintingPlayerState.gd" id="9_bneyr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6tj1"]
 
@@ -274,6 +275,10 @@ metadata/_custom_type_script = "uid://4conbm2g6g23"
 [node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1750636209 node_paths=PackedStringArray("ANIMATION")]
 script = ExtResource("8_jmoha")
 ANIMATION = NodePath("../../AnimationPlayer")
+metadata/_custom_type_script = "uid://4conbm2g6g23"
+
+[node name="SprintingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1221398943]
+script = ExtResource("9_bneyr")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
