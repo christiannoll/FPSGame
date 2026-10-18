@@ -12,6 +12,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func update(delta: float) -> void:
+	set_animation_speed(Global.player.velocity.length())
 
 func set_animation_speed(spd):
 	var alpha = remap(spd, 0.0, Global.player.SPEED_DEFAULT, 0.0, 1.0)
