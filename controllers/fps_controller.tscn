@@ -126,6 +126,9 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_bneyr"]
+resource_name = "Sprinting"
+
 [sub_resource type="Animation" id="Animation_jmoha"]
 resource_name = "Walking"
 length = 2.0
@@ -168,6 +171,7 @@ tracks/2/keys = {
 _data = {
 &"Crouch": SubResource("Animation_ca8e7"),
 &"RESET": SubResource("Animation_xc2pf"),
+&"Sprinting": SubResource("Animation_bneyr"),
 &"Walking": SubResource("Animation_jmoha")
 }
 
