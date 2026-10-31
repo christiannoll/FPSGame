@@ -128,6 +128,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_bneyr"]
 resource_name = "Sprinting"
+length = 1.2
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
