@@ -129,6 +129,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id="Animation_bneyr"]
 resource_name = "Sprinting"
 length = 1.2
+step = 0.1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -136,9 +137,9 @@ tracks/0/path = NodePath("CameraController/Camera3D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(-0.0016085618, -0.24672587, -0.013992344, 0.3, 0.017013632, 0.07707948, -0.10000001, -0.019140337, 0, 0, 0.08686232, -0.099999994, 0.018714994, 0, 0),
+"times": PackedFloat32Array(0, 0.3, 0.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -229,6 +230,7 @@ mesh = SubResource("CapsuleMesh_6tv51")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraController" unique_id=302703298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016085618, 0, 0)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="CameraController/Camera3D" unique_id=1809194360]
 update_mode = 1
