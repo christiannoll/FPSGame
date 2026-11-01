@@ -317,8 +317,9 @@ script = ExtResource("8_jmoha")
 ANIMATION = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
-[node name="SprintingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1221398943]
+[node name="SprintingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1221398943 node_paths=PackedStringArray("ANIMATION")]
 script = ExtResource("9_bneyr")
+ANIMATION = NodePath("../../AnimationPlayer")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
