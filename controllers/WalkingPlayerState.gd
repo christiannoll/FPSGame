@@ -17,5 +17,5 @@ func set_animation_speed(spd):
 	ANIMATION.speed_scale = lerp(0.0, TOP_ANIM_SPEED, alpha)
 
 func _input(event):
-	if event.is_action_pressed("sprint") and Global.player.is_om_floor():
+	if event.is_action_pressed("sprint") and Global.player.is_on_floor():
 		transition.emit("SprintPlayerState")
