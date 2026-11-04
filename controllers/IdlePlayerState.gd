@@ -1,6 +1,6 @@
 class_name IdlePlayerState
 
-extends State
+extends PlayerMovementState
 
 @export var ANIMATION: AnimationPlayer
 
