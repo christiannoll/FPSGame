@@ -2,23 +2,18 @@ class_name SprintingPlayerState
 
 extends PlayerMovementState
 
-@export var ANIMATION: AnimationPlayer
 @export var TOP_ANIM_SPEED: float = 1.0
 
 
 func enter() -> void:
 	ANIMATION.play("Sprinting", 0.5, 1.0)
-	Global.player._speed = Global.player.SPEED_SPRINTING
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	PLAYER._speed = PLAYER.SPEED_SPRINTING
 	
 func update(delta: float) -> void:
-	set_animation_speed(Global.player.velocity.length())
+	set_animation_speed(PLAYER.velocity.length())
 
 func set_animation_speed(spd):
-	var alpha = remap(spd, 0.0, Global.player.SPEED_SPRINTING, 0.0, 1.0)
+	var alpha = remap(spd, 0.0, PLAYER.SPEED_SPRINTING, 0.0, 1.0)
 	ANIMATION.speed_scale = lerp(0.0, TOP_ANIM_SPEED, alpha)
 	
 func _input(event):

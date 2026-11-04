@@ -2,11 +2,9 @@ class_name IdlePlayerState
 
 extends PlayerMovementState
 
-@export var ANIMATION: AnimationPlayer
-
 func enter() -> void:
 	ANIMATION.pause()
 
 func update(delta: float) -> void:
-	if Global.player.velocity.length() > 0.0 and Global.player.is_on_floor():
+	if PLAYER.velocity.length() > 0.0 and PLAYER.is_on_floor():
 		transition.emit("WalkingPlayerState")
