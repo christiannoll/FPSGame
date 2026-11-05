@@ -7,9 +7,7 @@ extends CharacterBody3D
 @export var SPEED_CROUCH: float = 2.0
 @export var ACCELERATION: float = 0.1
 @export var DECELERATION: float = 0.25
-@export var TOGGLE_CROUCH: bool = true
 @export var JUMP_VELOCITY : float = 4.5
-@export_range(5, 10, 0.1) var CROUCH_SPEED: float = 7.0
 @export var MOUSE_SENSITIVITY : float = 0.5
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
@@ -41,15 +39,6 @@ func _input(event):
 	
 	if event.is_action_pressed("exit"):
 		get_tree().quit()
-	if event.is_action_pressed("crouch") and is_on_floor():
-		toggle_crouch()
-	if event.is_action_pressed("crouch") and is_on_floor() and _is_crouching == false and TOGGLE_CROUCH == false: #Hold to crouch
-		crouching(true)
-	if event.is_action_released("crouch") and TOGGLE_CROUCH == false: #Released to Uncrouch
-		if CROUCH_SHAPECAST.is_colliding() == false:
-			crouching(false)
-		else:
-			uncrouch_check()
 		
 func _update_camera(delta):
 	
@@ -111,35 +100,3 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func toggle_crouch():
-	if _is_crouching == true and CROUCH_SHAPECAST.is_colliding() == false:
-		crouching(false)
-	else:
-		crouching(true)
-		
-func uncrouch_check():
-	if CROUCH_SHAPECAST.is_colliding() == false:
-		crouching(false)
-	else:
-		await get_tree().create_timer(0.1).timeout
-		uncrouch_check()
-
-func crouching(state: bool):
-	match state:
-		true: 
-			ANIMATIONPLAYER.play("Crouch", 0, CROUCH_SPEED)
-			set_movement_speed("crouching")
-		false:
-			ANIMATIONPLAYER.play("Crouch", 0, -CROUCH_SPEED, true)
-			set_movement_speed("default")
-
-func _on_animation_player_animation_started(anim_name: StringName) -> void:
-	if anim_name == "Crouch":
-		_is_crouching = !_is_crouching
-		
-func set_movement_speed(state: String):
-	match state:
-		"default":
-			_speed = SPEED_DEFAULT
-		"crouching":
-			_speed = SPEED_CROUCH
