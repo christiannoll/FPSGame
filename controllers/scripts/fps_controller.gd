@@ -2,6 +2,7 @@ class_name Player
 
 extends CharacterBody3D
 
+@export var SPEED_DEFAULT: float = 5
 @export var MOUSE_SENSITIVITY : float = 0.5
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
@@ -12,6 +13,7 @@ extends CharacterBody3D
 var _mouse_input : bool = false
 var _rotation_input : float
 var _tilt_input : float
+var _speed: float
 var _mouse_rotation : Vector3
 var _player_rotation : Vector3
 var _camera_rotation : Vector3
@@ -51,11 +53,13 @@ func _ready():
 	Global.player = self
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	_speed = SPEED_DEFAULT
 	
 	CROUCH_SHAPECAST.add_exception($".")
 
 func _physics_process(delta):
 	
+	Global.debug.add_property("MovementSpeed",_speed, 1)
 	Global.debug.add_property("Velocity","%.2f" % velocity.length(), 2)
 	
 	update_camera(delta)
