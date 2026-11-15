@@ -10,7 +10,7 @@ extends PlayerMovementState
 @onready var CROUCH_SHAPECAST: ShapeCast3D = %ShapeCast3D
 
 func enter() -> void:
-	ANIMATION.play("Crouching", -1.0, CROUCH_SPEED)
+	ANIMATION.play("Crouch", -1.0, CROUCH_SPEED)
 	
 func update(delta: float) -> void:
 	PLAYER.update_gravity(delta)
@@ -22,7 +22,7 @@ func update(delta: float) -> void:
 		
 func uncrouch():
 	if CROUCH_SHAPECAST.is_colliding() == false and Input.is_action_just_pressed("crouch") == false:
-		ANIMATION.play("Crouching", -1.0, -CROUCH_SPEED * 1.5, true)
+		ANIMATION.play("Crouch", -1.0, -CROUCH_SPEED * 1.5, true)
 		if ANIMATION.is_playing():
 			await ANIMATION.animation_finished
 		transition.emit("IdlePlayerState")
