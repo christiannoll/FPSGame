@@ -7,7 +7,7 @@ extends PlayerMovementState
 @export var DECELARATION: float = 0.25
 @export_range(1, 6, 0.1) var CROUCH_SPEED: float = 4.0
 
-@onready var CROUCH_SHAPECAST: ShapeCast3D = %SpapeCast3D
+@onready var CROUCH_SHAPECAST: ShapeCast3D = %ShapeCast3D
 
 func enter() -> void:
 	ANIMATION.play("Crouching", -1.0, CROUCH_SPEED)
