@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://rft82vwu4lgp" path="res://controllers/WalkingPlayerState.gd" id="8_jmoha"]
 [ext_resource type="Script" uid="uid://c8nsox3vl6eek" path="res://controllers/SprintingPlayerState.gd" id="9_bneyr"]
 [ext_resource type="Script" uid="uid://d3ubop4a44j24" path="res://controllers/CrouchingPlayerState.gd" id="10_jdr2h"]
+[ext_resource type="Script" uid="uid://dnjg63oqsswam" path="res://controllers/SlidingPlayerState.gd" id="11_rk4xh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6tj1"]
 
@@ -320,11 +321,16 @@ script = ExtResource("8_jmoha")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
 [node name="SprintingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1221398943]
+unique_name_in_owner = true
 script = ExtResource("9_bneyr")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
 [node name="CrouchingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1880521096]
 script = ExtResource("10_jdr2h")
+metadata/_custom_type_script = "uid://4conbm2g6g23"
+
+[node name="SlidingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1870877111]
+script = ExtResource("11_rk4xh")
 metadata/_custom_type_script = "uid://4conbm2g6g23"
 
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
