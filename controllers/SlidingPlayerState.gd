@@ -5,27 +5,29 @@ class_name SlidingPlayerState extends PlayerMovementState
 @export var ACCELERATION: float = 0.1
 @export var DECELARATION: float = 0.25
 @export var TILT_AMOUNT: float = 0.09 
-@export_range(1, 6, 0.1) var CROUCH_SPEED: float = 4.0
+@export_range(1, 6, 0.1) var SLIDE_ANIM_SPEED: float = 4.0
 
 @onready var CROUCH_SHAPECAST: ShapeCast3D = %ShapeCast3D
 
-func enter() -> void:
-	ANIMATION.play("Crouch", -1.0, CROUCH_SPEED)
+func enter(previous_state) -> void:
+	set_tilt(PLAYER._current_rotation)
+	ANIMATION.get_animation("Sliding").track_set_key_value(4, 0, Player.velocity.length())
+	ANIMATION.speed_scale = 1.0
+	ANIMATION.play("Sliding", -1.0, SLIDE_ANIM_SPEED)
 	
 func update(delta: float) -> void:
 	PLAYER.update_gravity(delta)
-	PLAYER.update_input(SPEED, ACCELERATION, DECELARATION)
+	#PLAYER.update_input(SPEED, ACCELERATION, DECELARATION)
 	PLAYER.update_velocity()
 		
-	if Input.is_action_just_released("crouch"):
-		uncrouch()
-		
-func uncrouch():
-	if CROUCH_SHAPECAST.is_colliding() == false and Input.is_action_just_pressed("crouch") == false:
-		ANIMATION.play("Crouch", -1.0, -CROUCH_SPEED * 1.5, true)
-		if ANIMATION.is_playing():
-			await ANIMATION.animation_finished
-		transition.emit("IdlePlayerState")
-	elif CROUCH_SHAPECAST.is_colliding() == true:
-		await get_tree().create_timer(0.1).timeout
-		uncrouch()
+func set_tilt(player_rotation) -> void:
+	var tilt = Vector3.ZERO
+	tilt.z = clamp(TILT_AMOUNT * player_rotation, -0.1, -0.1)
+	if tilt.z == 0:
+		tilt.z = 0.05
+	ANIMATION.get_animation("Sliding").track_set_key_value(8, 1, tilt)
+	ANIMATION.get_animation("Sliding").track_set_key_value(8, 2, tilt)
+	
+func finish():
+	transition.emit("CrouchingPlayerState")	
+	

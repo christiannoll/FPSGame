@@ -8,8 +8,11 @@ extends PlayerMovementState
 @export var TOP_ANIM_SPEED: float = 1.6
 
 
-func enter() -> void:
+func enter(previous_state) -> void:
 	ANIMATION.play("Sprinting", 0.5, 1.0)
+	
+func exit() -> void:
+	ANIMATION.speed_scale = 1.0
 	
 func update(delta: float) -> void:
 	PLAYER.update_gravity(delta)

@@ -5,7 +5,7 @@ class_name IdlePlayerState extends PlayerMovementState
 @export var DECELARATION: float = 0.25
 @export var TOP_ANIM_SPEED: float = 2.2
 
-func enter() -> void:
+func enter(previous_state) -> void:
 	ANIMATION.pause()
 
 func update(delta: float) -> void:

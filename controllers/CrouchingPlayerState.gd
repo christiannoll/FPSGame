@@ -9,7 +9,7 @@ extends PlayerMovementState
 
 @onready var CROUCH_SHAPECAST: ShapeCast3D = %ShapeCast3D
 
-func enter() -> void:
+func enter(previous_state) -> void:
 	ANIMATION.play("Crouch", -1.0, CROUCH_SPEED)
 	
 func update(delta: float) -> void:
