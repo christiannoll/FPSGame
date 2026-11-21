@@ -180,7 +180,6 @@ shape = SubResource("ConcavePolygonShape3D_vp4dy")
 
 [node name="Ramp" type="MeshInstance3D" parent="." unique_id=172743638]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 0)
-visible = false
 mesh = SubResource("PrismMesh_rutao")
 skeleton = NodePath("../Box")
 
@@ -193,7 +192,6 @@ shape = SubResource("ConcavePolygonShape3D_j6kcl")
 
 [node name="LowPlatform" type="MeshInstance3D" parent="." unique_id=1376499769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -5)
-visible = false
 mesh = SubResource("BoxMesh_yj8pt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LowPlatform" unique_id=1044267410]
@@ -203,7 +201,6 @@ shape = SubResource("BoxShape3D_yj8pt")
 
 [node name="HighPlatform" type="MeshInstance3D" parent="." unique_id=1138860175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.304529, 2, -3.7773952)
-visible = false
 mesh = SubResource("BoxMesh_yj8pt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="HighPlatform" unique_id=194198050]
