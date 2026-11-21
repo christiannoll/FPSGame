@@ -191,7 +191,7 @@ shape = SubResource("ConcavePolygonShape3D_j6kcl")
 [node name="CharacterBody3D" parent="." unique_id=532732714 instance=ExtResource("4_liofc")]
 
 [node name="LowPlatform" type="MeshInstance3D" parent="." unique_id=1376499769]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 6.7615986)
 mesh = SubResource("BoxMesh_yj8pt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LowPlatform" unique_id=1044267410]
@@ -200,7 +200,7 @@ mesh = SubResource("BoxMesh_yj8pt")
 shape = SubResource("BoxShape3D_yj8pt")
 
 [node name="HighPlatform" type="MeshInstance3D" parent="." unique_id=1138860175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.304529, 2, -3.7773952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.304529, 2, 3.9197993)
 mesh = SubResource("BoxMesh_yj8pt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="HighPlatform" unique_id=194198050]
